@@ -21,11 +21,11 @@ html(lang="es")
                         
                 .panel.lista-proyectos 
                     h2 Proyectos
-                    ul#proyectos.proyecto 
-                        li 
-                            a(href="") Diseño tienda Virtual 
-                        li 
-                            a(href="") Crear logo
-                        li 
-                            a(href="") Programar Web  
+                    ul#proyectos.proyecto
+                        if( proyectos )
+                            each proyecto in proyectos
+                                li
+                                    a(href=`/proyecto/${proyecto.url}`)=proyecto.nombre
             block contenido
+
+        script(src="/dist/bundle.js")

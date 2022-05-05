@@ -14,7 +14,10 @@ const sequelize = new Sequelize({
 // Option 3: Passing parameters separately (other dialects)
 const sequelize = new Sequelize('uptask', 'root', 'jhonykk', {
   host: '127.0.0.1',
-  dialect: 'mysql'
+  dialect: 'mysql',
+  define: {
+    timestamps: false
+  }
 });
 
 

@@ -13,6 +13,9 @@ body {
 .crear-cuenta {
     background: #455A64;
 }
+.sombra{
+    box-shadow: 4px 4px 10px grey;
+}
 .contenedor-formulario {
     display: flex;
     justify-content: center;

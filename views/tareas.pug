@@ -1,0 +1,23 @@
+extends layout 
+
+block contenido 
+    .contenido-principal 
+        h1 #{nombrePagina} - #{proyecto.nombre}
+        
+        //pre=vardump(tareas)
+        form.agregar-tarea(action=`/proyectos/${proyecto.url}` method='POST')
+            .campo
+                label Tarea: 
+                input.nombre-tarea(type='text' name='tarea' placeholder = 'Nombre de Tarea')
+            .campo-enviar 
+                input.boton.nueva-tarea(type='submit' value='Agregar Tarea')
+
+        .listado-pendientes 
+            ul 
+                each tarea in tareas 
+                    li.tarea 
+                        p=tarea.tarea        
+                        .acciones
+        .contenedor-acciones 
+            a.boton.sombra(href=`/proyecto/editar/${proyecto.id}`) Editar proyecto
+            button#eliminar-proyecto.boton.eliminar.sombra(data-proyecto-url=proyecto.url  type="button") Eliminar proyecto
